@@ -1,11 +1,20 @@
 
 
 
+<?php
+$id=get_cookie("id");
 
+$sql = "SELECT * FROM games WHERE owner='".$id."'";//load keys from db
+$result = $this->db->query($sql);
+
+
+$gamestotal=$result->num_rows();
+ ?>
       <div class="row marketing">
         <div class="col-lg-6">
           <h4>بازی ها</h4>
-          <p>شما ۱ بازی ثبت شده دارید.</p>
+            <p>شما <?php echo $gamestotal; ?> بازی ثبت شده دارید.</p>
+
 
           <h4>کاربران</h4>
           <p>شما مجموعا ۱۲۴۱۲ کاربر ثبت شده دارید.</p>
@@ -21,5 +30,3 @@
 
          </div>
       </div>
-
-

@@ -52,6 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 abstract class CI_DB_driver {
 
+
+
+
+
+
+
 	/**
 	 * Data Source Name / Connect string
 	 *
@@ -1895,5 +1901,8 @@ abstract class CI_DB_driver {
 	protected function _reset_select()
 	{
 	}
+	//my funcions - by arash rasoulzadeh
+
+
 
 }

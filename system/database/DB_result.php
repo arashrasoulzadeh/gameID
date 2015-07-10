@@ -120,6 +120,10 @@ class CI_DB_result {
 		$this->result_id = $driver_object->result_id;
 	}
 
+
+
+
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -127,6 +131,7 @@ class CI_DB_result {
 	 *
 	 * @return	int
 	 */
+
 	public function num_rows()
 	{
 		if (is_int($this->num_rows))

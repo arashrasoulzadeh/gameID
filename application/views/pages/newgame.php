@@ -1,5 +1,5 @@
 <?php
-	
+
  		if ( ( null!=$this->input->post("gamename")) || ( null!=$this->input->post("platform"))  )
 		{
 			$n=$this->input->post("gamename");
@@ -12,15 +12,15 @@
 				$this->db->query($sql);
 				echo "عملیات ثبت بازی انجام شد. لطفا منتظر تایید مدیر بمانید.";
 			}else{
-				showform("لطفا اطلاعات را کامل وارید کنید.");
+				showform("لطفا اطلاعات را کامل وارد کنید.");
 			}
 		}else{
 			showform("");
 		}
-		
+
 		function showform($message)
 		{
-				
+
 	  $gamename = array(
               'name'        => 'gamename',
               'id'          => 'gamename',
@@ -30,14 +30,14 @@
               'size'        => '50',
 			  );
 
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 		$attributes = array('class' => 'form-inline');
 		echo validation_errors();
 		echo form_open('',$attributes);
@@ -50,7 +50,7 @@
 
 
 	?>
-	
+
 	<?php if ($message!=null) { ?>
 	<div class="form-group has-error">
 
@@ -58,26 +58,26 @@
 <?php echo $message; ?>
 	</div>	</small><br><br>
 	 <?php } ?>
-	
-	
+
+
 <table class="" >
 	<tr class="form-group">
 		<td><label for="gamename">نام بازی : </label></td>
 		<td><?php  echo form_input($gamename); ?></td>
 		<td><?php ?></td>
-	<tr>	
+	<tr>
 		<tr class="form-group">
 		<td><label for="gamename">پلت فرم : </label></td>
 		<td><?php  echo form_dropdown('platform', $options, 'large','class="form-control" width=120 ');
 ?></td>
 		<td><?php ?><small> نگران نباشید بعدا میتونین پلتفرم های دیگری را هم اضافه کنید.</td>
-	<tr>		
-	
-	
+	<tr>
+
+
 </table>
 	<br><br>
 	<?php
-		
+
 		        $data = array(
                'value'       => 'ثبت بازی و شروع ',
               'maxlength'   => '100',
