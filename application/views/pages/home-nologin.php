@@ -1,21 +1,33 @@
-      <div class="jumbotron">
-        <h2>سرویس بازی شناسه</h2>
-        <p class="lead"><small>توسط این سرویس به راحتی میتوانید برای بازی خود سیستم امتیاز درست کنید و کد آماده را دریافت و وارد پروژه کنید. نگران نباشید. این سرویس امن است.</p></small>
-        <p>
-	        
-	        
-	        
-	        
-	        
+<style>
+#grad1 {
+height: 200px;
+width:50%;background-color:white;padding:20px
+}
+</style>
+
+    <center>
+<div id="grad1">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">ورود</h3>
+            </div>
+            <div class="panel-body">
+               برای ورود لطفا اطلاعات خود را با دقت وارد کنید
+            <br>
+<br>
+
+
+
+
 	<?php
-		
+
 		if ( ( null!=$this->input->post("username")) && ( null!=$this->input->post("password")) )
 		{
 			$u=$this->input->post("username");
 			$p=$this->input->post("password");
-			
+
 			$query = $this->db->query("SELECT * FROM user WHERE email = '".$u."' ");
-	
+
 			foreach ($query->result() as $row)
 			{
 			        if ( md5($p) == $row->password)
@@ -57,18 +69,18 @@
 			        }
 			}
 		}
- 
+
 	?>
-	        
-	        
-	        
+
+
+
 	        <?php echo form_open(''); ?>
-	        
-	        
- 	        <table> 
-	 	 		<tr>       
+
+
+ 	        <table>
+	 	 		<tr>
 		 	 		<td>
-	        <?php 
+	        <?php
 		        echo form_label(' رایانامه شما : ', 'username');
 				echo "</td><td> ";
 				       $data = array(
@@ -78,7 +90,7 @@
 		              'maxlength'   => '100',
 		              'size'        => '50',
 		              'type'       => 'email',
-		              'style'       => 'width:50%',
+		              'class'       => 'form-control',
 					  );
 				echo form_input($data);
 				echo "</td></tr><tr><td> ";
@@ -92,11 +104,11 @@
               'maxlength'   => '100',
               'size'        => '50',
                'type'       => 'password',
-              'style'       => 'width:50%',
+               'class'       => 'form-control',
 			  );
 
 			echo form_input($data);
-			echo "</td></tr><tr><td> ";
+			echo "</td></tr><tr><td><br> ";
 
 		        $data = array(
                'value'       => 'ورود',
@@ -106,10 +118,16 @@
 
 			echo form_input($data);
 
-		        
-		        
+
+
 		         ?>
 		 	 		</td></tr>
- 	        </table>
-		         <br><br>
+        </table>
+        <a href="<?php echo base_url(); ?>index.php/pages/view/register">درخواست حساب کاربری</a>
+
+      </div>
+
+		      
        </div>
+       </div>
+     </div>

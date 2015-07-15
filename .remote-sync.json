@@ -1,0 +1,12 @@
+{
+  "transport": "ftp",
+  "uploadOnSave": false,
+  "hostname": "185.8.173.19",
+  "port": "21",
+  "target": "/domains/gameid.ir/public_html/api",
+  "ignore": [
+    ".git/**"
+  ],
+  "username": "gameid",
+  "password": "rmOEjm7K83QFMH"
+}

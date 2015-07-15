@@ -35,5 +35,6 @@ if ((isset($_POST['request'])) &&  (isset($_POST['i']))) {
     $foo = new Foo();
     $cmd = $foo->decrypt($key, $iv, $encrypted); //decrypt command
   //this is for test porpuse
+  $query = $this->db->query("UPDATE games SET transactions = transactions + 1 WHERE id='".$_POST['i']."'");
   $this->load->view('games/1.php', array('command' => $cmd,'driver'=>$foo));
 }

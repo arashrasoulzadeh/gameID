@@ -17,8 +17,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
+ $whitelist = array(
+    '127.0.0.1',
+    '::1',"192.168.1.42"
+);
+//$config['base_url'] = 'http://gameid.ir/api';
+$config['base_url'] = 'http://127.0.0.1/unity/gameid/gameID';
+if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
 
+$config['base_url'] = 'http://api.gameid.ir';
+
+}
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -29,7 +38,6 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -211,7 +219,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
